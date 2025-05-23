@@ -1,0 +1,3 @@
+{
+    "content": "You can declare path parameters and request body at the same time.\n\nFastAPI will recognize that the function parameters that match path parameters should be taken from the path, and that function parameters that are declared to be Pydantic models should be taken from the request body."
+}

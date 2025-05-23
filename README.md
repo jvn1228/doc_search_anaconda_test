@@ -5,7 +5,7 @@ Hello Anaconda
 This is the repo for the technical assessment. It implements the required in-memory search service using FastAPI.
 
 ## Design and Assumptions
-A very basic index is created that separates words based on whitespace only. A keyword search must exactly match for a document to be returned. It is assumed characters will be in the latin alphabet, although it probably works with any UTF-8 characters. It is also assumed we only care that the word exists in the document and have no concerns about where or how often it occurs, so search returns are weighed equally in that regard, and are likely arranged in order of insertion.
+A very basic index is created that separates words based on whitespace only. A keyword search must exactly match for a document to be returned. Punctuation is not removed and so must be included at this stage as well. It is assumed characters will be in the latin alphabet, although it probably works with any UTF-8 characters. It is also assumed we only care that the word exists in the document and have no concerns about where or how often it occurs, so search returns are weighed equally in that regard, and are likely arranged in order of insertion.
 
 The index contains all unique words across all documents. It does not distinguish on size at this moment (eg "a" is considered a valid keyword although realistically it is not). If many, many documents are uploaded and unique words balloon, the index may not be as efficient as desired, especially for deleting documents, where the index must be scanned for the document's tokens.
 
@@ -43,7 +43,7 @@ curl -X 'POST' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-  "content": "I'\''m just a simple document\nI don'\''t know where I went"
+  "content": "I'm just a simple document\nI don't know where I went"
 }'
 ```
 
