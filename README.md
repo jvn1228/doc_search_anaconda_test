@@ -5,7 +5,7 @@ Hello Anaconda
 This is the repo for the technical assessment. It implements the required in-memory search service using FastAPI.
 
 ## Setup
-uv is used to manage the environment and dependencies.
+[uv](https://docs.astral.sh/uv/) is used to manage the environment and dependencies.
 
 ## Running
 
