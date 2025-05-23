@@ -1,0 +1,16 @@
+[project]
+name = "doc-search-anaconda-test"
+version = "0.1.0"
+description = "Document store and search"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.115.12",
+]
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=8.3.5",
+    "pytest-cov>=6.1.1",
+]
