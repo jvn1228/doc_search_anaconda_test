@@ -43,7 +43,7 @@ curl -X 'POST' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-  "content": "I'm just a simple document\nI don't know where I went"
+  "content": "I''\'m just a simple document\nI don'\''t know where I went"
 }'
 ```
 
