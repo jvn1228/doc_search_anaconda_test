@@ -4,6 +4,13 @@ Hello Anaconda
 
 This is the repo for the technical assessment. It implements the required in-memory search service using FastAPI.
 
+## Design and Assumptions
+A very basic index is created that separates words based on whitespace only. A keyword search must exactly match for a document to be returned. It is assumed characters will be in the latin alphabet, although it probably works with any UTF-8 characters. It is also assumed we only care that the word exists in the document and have no concerns about where or how often it occurs, so search returns are weighed equally in that regard, and are likely arranged in order of insertion.
+
+The index contains all unique words across all documents. It does not distinguish on size at this moment (eg "a" is considered a valid keyword although realistically it is not). If many, many documents are uploaded and unique words balloon, the index may not be as efficient as desired, especially for deleting documents, where the index must be scanned for the document's tokens.
+
+The API is simple and, because it's for fun, does not factor in security (a proxy server can be used to handle that). In a similar vein, for prod deployment, an entry point to run uvicorn directly without hot-reloading may be preferred. And pod health monitoring would be added.
+
 ## Setup
 [uv](https://docs.astral.sh/uv/) is used to manage the environment and dependencies.
 
