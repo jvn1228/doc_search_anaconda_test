@@ -29,7 +29,7 @@ When running for development, see http://localhost:8080/docs.
 
 ### Example usage
 
-Insert doc
+**Insert doc**
 ```bash
 curl -X 'POST' \
   'http://localhost:8080/documents/a' \
@@ -42,7 +42,7 @@ curl -X 'POST' \
 
 Does not return anything
 
-Search docs
+**Search docs**
 ```bash
 curl -X 'GET' \
   'http://localhost:8080/search?keyword=document' \
@@ -56,7 +56,7 @@ Returns list of document ids containing keyword
 ]
 ```
 
-Delete doc
+**Delete doc**
 ```bash
 curl -X 'DELETE' \
   'http://localhost:8080/documents/a' \
@@ -65,7 +65,7 @@ curl -X 'DELETE' \
 
 Does not return anything
 
-Get deleted ids
+**Get deleted ids**
 ```bash
 curl -X 'GET' \
   'http://localhost:8080/documents/deleted' \
