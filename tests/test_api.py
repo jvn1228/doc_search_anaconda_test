@@ -1,7 +1,7 @@
 import pytest
 from fastapi.testclient import TestClient
 
-from doc_search.__main__ import app, store
+from doc_search import app, store
 from doc_search.models import Document
 
 # Create a test client

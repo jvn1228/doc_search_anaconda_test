@@ -11,6 +11,10 @@ COPY doc_search /app/doc_search/
 # Install dependencies and build package
 RUN uv pip install --system --no-cache .
 
+# Run tests here too
+COPY tests /app/tests/
+RUN uv run pytest --cov
+
 # Runtime stage
 FROM python:3.13-slim
 
